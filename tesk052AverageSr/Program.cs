@@ -34,7 +34,7 @@ int[,] FillArray2D(int[,] array, int minValue, int maxValue)
     return array;
 }
 
-void PrintArray2D(int[,] array)    // метод печати двумергного  массива 
+void PrintArray2D(int[,] array)    
 {
     for(int i = 0; i < array.GetLength(0); i++)
     {
@@ -52,11 +52,13 @@ void PrintArray2D(int[,] array)    // метод печати двумергно
 int[,] mass = new int[3,4];
 FillArray2D(mass, 1, 9);
 Console.WriteLine("");
+
 PrintArray2D(mass);
- double[] newMass = FindAvarage(mass);
- for(int i = 0; i < newMass.GetLength(0); i++)
+ double[] newAvarageMass= FindAvarage(mass);
+ for(int i = 0; i < newAvarageMass.GetLength(0); i++)
  {
-    Console.Write($"{newMass[i]}, ");
+    Console.Write($"{newAvarageMass[i]}, ");
  }
-Console.WriteLine("");
+Console.WriteLine(""); Console.WriteLine("");
+
  
