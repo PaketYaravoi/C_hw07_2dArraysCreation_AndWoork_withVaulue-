@@ -23,7 +23,21 @@ int FindNumbers(int[,] array, int index1, int index2)
     return yourNumber;
 }
 
-
+int[,] GetArray2D(int rows, int columns)
+{
+    int[,] array = new int[rows, columns];
+    Random rnd = new Random();
+    {
+        for(int i = 0; i < array.GetLength(0); i++)
+        {
+            for(int j =0; j < array.GetLength(1); j++)
+            {   
+                array[i,j] = rnd.Next(1501);
+            }
+        }
+        return array;
+    }
+}
 
 void PrintArray2D(int[,] array)    // метод печати двумергного  массива 
 {
@@ -38,7 +52,21 @@ void PrintArray2D(int[,] array)    // метод печати двумергно
     Console.WriteLine();
 }
 
-int[,] array = new int[2,2]{{1,2},{3,4}};
-int result = FindNumbers(array, 1, 10);
+int Prompt(string massage)
+{
+    Console.WriteLine(massage);
+    string stringInput = Console.ReadLine()!;
+    int result = Int32.Parse(stringInput);
+    return result;
+}
+
+
+int rows = Prompt("Введите количество строк в массиве: ");
+int columns = Prompt("Введите количество столбцов в массиве: ");
+int index1 = Prompt("Введите индекс строки: ");
+int index2 = Prompt("Введите индекс столбца: ");
+int[,] array = GetArray2D(rows, columns);
+
+int result = FindNumbers(array, index1, index2);
 PrintArray2D(array);
 Console.WriteLine(result);
