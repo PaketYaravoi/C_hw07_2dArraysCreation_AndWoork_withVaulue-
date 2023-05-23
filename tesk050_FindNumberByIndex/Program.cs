@@ -11,12 +11,12 @@ int FindNumbers(int[,] array, int index1, int index2)
     int yourNumber = -1;
     if(index1 < 0 || index2 < 0)
     {
-        Console.WriteLine("один из индексов меньше \"0\" ");
+        //Console.WriteLine("один из индексов меньше \"0\" ");
         return yourNumber;
     }
     if(index1 > array.GetLength(0) - 1 || index2 > array.GetLength(1) - 1)
     {
-        Console.WriteLine($"число с индексами {index1}, {index2} нет в массиве");
+      //Console.WriteLine($"число с индексами {index1}, {index2} нет в массиве");
         return yourNumber;
     }
     yourNumber = array[index1, index2];
@@ -39,7 +39,7 @@ int[,] GetArray2D(int rows, int columns)
     }
 }
 
-void PrintArray2D(int[,] array)    // метод печати двумергного  массива 
+void PrintArray2D(int[,] array) 
 {
     for(int i = 0; i < array.GetLength(0); i++)
     {
